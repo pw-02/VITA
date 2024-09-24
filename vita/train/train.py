@@ -506,7 +506,7 @@ def train():
             cache_dir=training_args.cache_dir,
             model_max_length=training_args.model_max_length,
             padding_side="right",
-            use_fast=True,
+            use_fast=False,
         )
 
     if tokenizer.unk_token is not None and tokenizer.pad_token is None:

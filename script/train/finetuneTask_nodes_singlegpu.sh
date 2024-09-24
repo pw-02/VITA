@@ -44,7 +44,7 @@ mkdir -p ${OUTPUT_DIR_FT}
 
 torchrun $DISTRIBUTED_ARGS vita/train/train.py \
     --deepspeed ./script/deepspeed/zero3.json \
-    --model_name_or_path downloads/VITA_ckpt \ \
+    --model_name_or_path downloads/VITA_ckpt \
     --model_type $MODEL_TYPE \
     --version mixtral_two \
     --dataset_use Pretrain_video \
