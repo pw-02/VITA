@@ -23,3 +23,6 @@ torchvision
 tqdm==4.66.4
 transformers==4.41.1
 xformers
+six
+matplotlib
+timm
