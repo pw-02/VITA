@@ -422,6 +422,7 @@ def train():
         # use_s2=False,
         # pretrain_mm_mlp_adapter=None,
          mm_projector_type="mlp2x_gelu"
+         
     )
      # Hardcode DataArguments (example)
     data_args = DataArguments(
@@ -436,7 +437,7 @@ def train():
     )
      # Hardcode TrainingArguments (example)
     training_args = TrainingArguments(
-       output_dir="./output",
+       output_dir="outputs/vita_video_audio",
        num_train_epochs=1,
        per_device_train_batch_size=8,
        per_device_eval_batch_size=4,
@@ -501,7 +502,7 @@ def train():
     assert model_args.vision_tower is not None
     if model_args.model_type in {"mixtral-8x7b"}:
         tokenizer = transformers.AutoTokenizer.from_pretrained(
-            pathlib.Path(model_args.model_name_or_path),
+            model_args.model_name_or_path,
             cache_dir=training_args.cache_dir,
             model_max_length=training_args.model_max_length,
             padding_side="right",
