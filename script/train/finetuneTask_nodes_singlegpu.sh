@@ -15,7 +15,7 @@ export NCCL_IB_CUDA_SUPPORT=1
 export NCCL_DEBUG=INFO
 
 # Single GPU usage
-DISTRIBUTED_ARGS="--nproc_per_node 1"
+# DISTRIBUTED_ARGS="--nproc_per_node 1"
 
 # INDEX=5
 # MASTER_ADDR="10.206.0.199"
@@ -27,6 +27,15 @@ DISTRIBUTED_ARGS="--nproc_per_node 1"
 #     --master_addr $MASTER_ADDR \
 #     --master_port 9999
 # "
+MASTER_ADDR="localhost" #127.0.0.1
+INDEX=0
+DISTRIBUTED_ARGS="
+    --nproc_per_node 1 \
+    --nnodes 1 \
+    --node_rank $INDEX \
+    --master_addr $MASTER_ADDR \
+    --master_port 9999
+"
 export NCCL_TIMEOUT=25200
 MODEL_TYPE=mixtral-8x7b
 OUTPUT_DIR=$1

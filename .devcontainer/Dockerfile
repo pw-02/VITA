@@ -39,7 +39,7 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt \
     && rm /tmp/requirements.txt
 
 # Set PYTHONPATH
-ENV PYTHONPATH=/workspaces/super-ml-workloads
+ENV PYTHONPATH=/workspaces/VITA
 
 # Cleanup
 RUN apt-get clean && \
