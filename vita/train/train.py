@@ -409,7 +409,7 @@ def train():
     parser = transformers.HfArgumentParser((ModelArguments, DataArguments, TrainingArguments))
      # Hardcode ModelArguments
     model_args = ModelArguments(
-        model_name_or_path="downloads/VITA_ckpt",
+        model_name_or_path="/home/pwatters/projects/VITA/downloads/VITA_ckpt",
         model_type="mixtral-8x7b",
         version="mixtral_two",
         # freeze_backbone=False,
