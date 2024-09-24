@@ -501,7 +501,7 @@ def train():
     assert model_args.vision_tower is not None
     if model_args.model_type in {"mixtral-8x7b"}:
         tokenizer = transformers.AutoTokenizer.from_pretrained(
-            model_args.model_name_or_path,
+            pathlib.Path(model_args.model_name_or_path),
             cache_dir=training_args.cache_dir,
             model_max_length=training_args.model_max_length,
             padding_side="right",
